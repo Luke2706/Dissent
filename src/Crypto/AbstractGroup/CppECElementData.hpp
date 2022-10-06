@@ -4,7 +4,7 @@
 #include <cryptopp/ecp.h>
 #include <QByteArray>
 #include "ElementData.hpp"
-
+typedef unsigned char byte;
 namespace Dissent {
 namespace Crypto {
 namespace AbstractGroup {

@@ -83,7 +83,7 @@ namespace Crypto {
       return false;
     }
 
-    RSASS<PKCS1v15, SHA>::Verifier verifier(*m_public_key);
+    RSASS<PKCS1v15,SHA512>::Verifier verifier(*m_public_key);
     return verifier.VerifyMessage(reinterpret_cast<const byte *>(data.data()),
         data.size(), reinterpret_cast<const byte *>(sig.data()), sig.size());
   }
@@ -94,7 +94,7 @@ namespace Crypto {
       return QByteArray();
     }
 
-    RSAES<OAEP<SHA> >::Encryptor encryptor(*m_public_key);
+    RSAES<OAEP<SHA512> >::Encryptor encryptor(*m_public_key);
     int clength = ((data.size() / AES::BLOCKSIZE) + 1) * AES::BLOCKSIZE;
     int data_start = encryptor.FixedCiphertextLength() + AES::BLOCKSIZE;
     QByteArray ciphertext(data_start + clength, 0);

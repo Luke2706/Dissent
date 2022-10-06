@@ -3,7 +3,7 @@
 
 #include <QByteArray>
 #include <QSharedData>
-
+typedef unsigned char byte;
 namespace Dissent {
 namespace Crypto {
   class IHashImpl : public QSharedData {

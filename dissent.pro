@@ -4,6 +4,8 @@ DEPENDPATH +=
 CONFIG += qt debug
 QT = core network
 greaterThan(QT_MAJOR_VERSION, 4):QT += concurrent
+DESTDIR += build/
+OBJECTS_DIR += build/.output/
 
 # Dissent Wire protocol version
 DEFINES += "VERSION=3"
@@ -18,8 +20,9 @@ DEFINES += FAST_NEFF_SHUFFLE
 # UNCOMMENT THE FOLLOWING TO ENABLE BLOG DROP BLAME FOR CSBULK
 # DEFINES += CS_BLOG_DROP
 
-QMAKE_CXXFLAGS += -Werror -std=c++11
-QMAKE_CFLAGS += -Werror
+#QMAKE_CXXFLAGS += -Werror -std=c++11 currently comment as with -Werror no compile is possible
+QMAKE_CXXFLAGS += -std=c++11
+#QMAKE_CFLAGS += -Werror
 
 # External Libraries
 

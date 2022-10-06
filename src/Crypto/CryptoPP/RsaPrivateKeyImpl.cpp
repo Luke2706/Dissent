@@ -5,6 +5,7 @@
 #include "Crypto/RsaPrivateKey.hpp"
 #include "Helper.hpp"
 #include "RsaPublicKeyImpl.hpp"
+//#include "Crypto/CryptoRandom.hpp"
 
 using namespace CryptoPP;
 
@@ -16,6 +17,7 @@ namespace Crypto {
         m_private_key(new RSA::PrivateKey)
       {
         if(seed) {
+          
           CryptoRandom rand(data);
           m_private_key->GenerateRandomWithKeySize(GetCppRandom(rand),
               RsaPrivateKey::DefaultKeySize());
@@ -42,8 +44,11 @@ namespace Crypto {
           qCritical() << "Trying to sign with an invalid key";
           return QByteArray();
         }
+        //SHA224
+        RSASS<PKCS1v15, SHA512>::Signer signer(*m_private_key);
+        
+        //RSASS<PKCS1v15, SHA512>::Signer signer(*m_private_key);
 
-        RSASS<PKCS1v15, SHA>::Signer signer(*m_private_key);
         QByteArray sig(signer.MaxSignatureLength(), 0);
         CryptoRandom rand;
         signer.SignMessage(GetCppRandom(rand),
@@ -60,8 +65,8 @@ namespace Crypto {
         }
 
         CryptoRandom rand;
-        RSAES<OAEP<SHA> >::Decryptor decryptor(*m_private_key);
-
+        RSAES<OAEP<SHA512> >::Decryptor decryptor(*m_private_key);
+        
         int data_start = decryptor.FixedCiphertextLength() + AES::BLOCKSIZE;
         int clength = data.size() - data_start;
         if(clength <= 0) {

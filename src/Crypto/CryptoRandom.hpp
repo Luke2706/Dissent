@@ -5,7 +5,7 @@
 
 #include "Utils/Random.hpp"
 #include "Integer.hpp"
-
+typedef unsigned char byte;
 namespace Dissent {
 namespace Crypto {
   class ICryptoRandomImpl : public QSharedData {

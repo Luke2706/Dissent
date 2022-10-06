@@ -1,4 +1,5 @@
 #if CRYPTOPP
+#endif
 #ifndef DISSENT_CRYPTO_CRYPTOPP_HELPER_H_GUARD
 #define DISSENT_CRYPTO_CRYPTOPP_HELPER_H_GUARD
 #include <QByteArray>
@@ -16,5 +17,6 @@ namespace Crypto {
 }
 }
 
+//#endif
 #endif
-#endif
+
