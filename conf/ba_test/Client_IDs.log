@@ -1,10 +1,10 @@
 #Clients 
 
-    #1 Dissent_C01 = "192.168.178.75_Dissent_C01" 
-    #2
-    #3
+    #1 Dissent-C01 = "192.168.178.75_Dissent_C01" 
+    #2 Dissent-C02 = "192.168.178.77_Dissent_C02"
+    #3 Dissent-C03 =
 
 # Servers
 
-    #1
-    #2
+    #1 Dissent-S01 =
+    #2 Dissent-S02 = 
