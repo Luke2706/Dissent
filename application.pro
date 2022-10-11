@@ -8,4 +8,4 @@ INCLUDEPATH += src
 # Input
 SOURCES += src/Applications/Application.cpp
 DESTDIR += build/
-OBJECTS_DIR += build/.output/
+OBJECTS_DIR += build/.output/dissent

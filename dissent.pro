@@ -5,7 +5,7 @@ CONFIG += qt debug
 QT = core network
 greaterThan(QT_MAJOR_VERSION, 4):QT += concurrent
 DESTDIR += build/
-OBJECTS_DIR += build/.output/
+OBJECTS_DIR += build/.output/dissent
 
 # Dissent Wire protocol version
 DEFINES += "VERSION=3"
