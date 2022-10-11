@@ -14,12 +14,8 @@ keygen
 *.moc
 entry_tunnel
 exit_tunnel
-build/keygen
-build/dissent
-build/.output
-build/conf/private
-build/conf/public
-build/conf/*.conf
+build/*
+build/conf/*
 conf/local/*.log
 Makefile_Backup
 .qmake.stash
